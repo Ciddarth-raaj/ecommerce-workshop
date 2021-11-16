@@ -1,0 +1,69 @@
+.headerWrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: aliceblue;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.logo {
+  position: relative;
+  height: 52px;
+  cursor: pointer;
+}
+
+.logo h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.logo .storeText {
+  color: #0088ff;
+  position: absolute;
+  right: 58px;
+  transition: all 0.3s;
+}
+
+.logo:hover .storeText {
+  right: 0;
+}
+
+.searchBar {
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  width: 50%;
+  max-width: 350px;
+  transition: all 0.5s;
+}
+
+.searchBar:focus {
+  box-shadow: 9px 17px 26px -14px rgba(0, 0, 0, 0.37);
+  -webkit-box-shadow: 9px 17px 26px -14px rgba(0, 0, 0, 0.37);
+  -moz-box-shadow: 9px 17px 26px -14px rgba(0, 0, 0, 0.37);
+}
+
+.button {
+  border: none;
+  padding: 10px;
+  background-color: #0088ff;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.button:active {
+  transform: scale(0.9);
+}
+
+.button.signup {
+  margin-right: 20px;
+}
