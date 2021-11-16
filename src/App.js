@@ -1,20 +1,20 @@
 import './App.css';
 
-import Header from "./Components/Header/Header"
-import Banner from "./Components/Banner/Banner"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import ProductCard from './Components/ProductCard/ProductCard';
+//npm i react-router
+//npm i react-router-dom
 
-function App() {
-  return (
-    <div>
-      <Header />
+import Home from "./Pages/Home"
+import Product from './Pages/Product';
 
-      <Banner />
-
-      <ProductCard />
-    </div>
-  );
+function Router() {
+  return <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/product/:name" element={<Product />} />
+    </Routes>
+  </BrowserRouter>
 }
 
-export default App;
+export default Router;

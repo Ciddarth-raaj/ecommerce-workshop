@@ -2,19 +2,27 @@ import React from "react";
 
 import styles from "./ProductCard.module.css"
 
-function ProductCard() {
+import { Link } from "react-router-dom";
 
-    const image = "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-family-hero?wid=940&hei=1112&fmt=png-alpha&.v=1631220221000"
-    const product_name = "iPhone 13"
-    const price = 60000
+function ProductCard(props) {
 
-    return <div>
-        <img src={image} />
-        <p>{product_name}</p>
-        <p>{price}</p>
+    const image = props.image
+    const product_name = props.product_name
+    const price = props.price
 
-        <button>Add to Cart</button>
-    </div>
+    function currencyFormat(num) {
+        return '₹ ' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    }
+
+    return <Link to={"/product/" + product_name.split(" ").join("-")} className={styles.linkWrapper}>
+        <div className={styles.mainWrapper}>
+            <img src={image} className={styles.image} />
+            <p className={styles.productName}>{product_name}</p>
+            <p className={styles.price}>{currencyFormat(price)}</p>
+
+            <button className={styles.button}>Add to Cart</button>
+        </div>
+    </Link>
 }
 
 export default ProductCard
